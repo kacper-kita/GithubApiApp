@@ -37,8 +37,8 @@ final class MainView: UIView {
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            mainLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainLabel.topAnchor.constraint(equalTo: topAnchor),
             mainLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
