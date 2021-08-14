@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360ADFA926C7FCFC0045792B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360ADFA826C7FCFC0045792B /* Users.swift */; };
+		360ADFAB26C7FD870045792B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360ADFAA26C7FD870045792B /* NetworkManager.swift */; };
 		3690295226C2F79300E3B35A /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3690295126C2F79300E3B35A /* MainTableView.swift */; };
 		36A8210C26C1961900B3088B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8210B26C1961900B3088B /* AppDelegate.swift */; };
 		36A8210E26C1961900B3088B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8210D26C1961900B3088B /* SceneDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360ADFA826C7FCFC0045792B /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		360ADFAA26C7FD870045792B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3690295126C2F79300E3B35A /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		36A8210826C1961900B3088B /* GithubApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A8210B26C1961900B3088B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360ADFA726C7FCD30045792B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				360ADFAA26C7FD870045792B /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		36A820FF26C1961900B3088B = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +72,7 @@
 		36A8210A26C1961900B3088B /* GithubApiApp */ = {
 			isa = PBXGroup;
 			children = (
+				360ADFA726C7FCD30045792B /* Services */,
 				36A8212226C198A500B3088B /* ViewController */,
 				36A8212126C1989D00B3088B /* Model */,
 				36A8212026C1989000B3088B /* ViewModel */,
@@ -92,6 +105,7 @@
 		36A8212126C1989D00B3088B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				360ADFA826C7FCFC0045792B /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,8 +209,10 @@
 				36A8211026C1961900B3088B /* ViewController.swift in Sources */,
 				36A8212826C19F6200B3088B /* MainView.swift in Sources */,
 				3690295226C2F79300E3B35A /* MainTableView.swift in Sources */,
+				360ADFAB26C7FD870045792B /* NetworkManager.swift in Sources */,
 				36A8210C26C1961900B3088B /* AppDelegate.swift in Sources */,
 				36A8210E26C1961900B3088B /* SceneDelegate.swift in Sources */,
+				360ADFA926C7FCFC0045792B /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        NetworkManager.shared.getUsers { (user) in
+            guard let user = user else {return}
+            print(user[0].login)
+        }
     }
 
     func setupView() {
