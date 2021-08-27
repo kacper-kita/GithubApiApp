@@ -29,13 +29,13 @@ final class MainView: UIView {
         fatalError("init(coder) ERROR")
     }
     
-    func setupView() {
+    private func setupView() {
         addSubview(mainLabel)
 
         setupConstraints()
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             mainLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             mainLabel.topAnchor.constraint(equalTo: topAnchor),

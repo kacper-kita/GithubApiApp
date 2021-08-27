@@ -8,6 +8,40 @@
 import UIKit
 
 final class MainTableView: UITableViewCell {
+    
+    var userVM: UsersViewModel? {
+        didSet {
+            if let userVM = userVM {
+                titleLabel.text = userVM.login
+                NetworkManager.shared.getImage(urlString: userVM.avatar_url) { (data) in
+                    guard let data = data else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.userImage.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
+    }
+    
+    var userImageData: Data? {
+        didSet {
+            if let data = userImageData {
+                
+            }
+        }
+    }
+    
+    lazy var userImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 15
+        return image
+        
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,16 +60,24 @@ final class MainTableView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView() {
+    private func setupView() {
         addSubview(titleLabel)
+        addSubview(userImage)
         
         setupConstraints()
     }
+    //TODO: Fix problem with images
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16)
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+        ])
+        
+        NSLayoutConstraint.activate([
+            userImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            userImage.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 50),
+            userImage.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
 }

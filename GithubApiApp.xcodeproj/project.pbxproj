@@ -17,6 +17,8 @@
 		36A8211826C1961A00B3088B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A8211626C1961A00B3088B /* LaunchScreen.storyboard */; };
 		36A8212626C198DC00B3088B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A8212526C198DC00B3088B /* Colors.xcassets */; };
 		36A8212826C19F6200B3088B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8212726C19F6200B3088B /* MainView.swift */; };
+		36B700C426D93E2800D943DA /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B700C326D93E2800D943DA /* UsersViewModel.swift */; };
+		36B700C626D9403900D943DA /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B700C526D9403900D943DA /* UsersListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		36A8211926C1961A00B3088B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A8212526C198DC00B3088B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		36A8212726C19F6200B3088B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		36B700C326D93E2800D943DA /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		36B700C526D9403900D943DA /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		36A8212026C1989000B3088B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				36B700C326D93E2800D943DA /* UsersViewModel.swift */,
+				36B700C526D9403900D943DA /* UsersListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,7 +216,9 @@
 				36A8212826C19F6200B3088B /* MainView.swift in Sources */,
 				3690295226C2F79300E3B35A /* MainTableView.swift in Sources */,
 				360ADFAB26C7FD870045792B /* NetworkManager.swift in Sources */,
+				36B700C626D9403900D943DA /* UsersListViewModel.swift in Sources */,
 				36A8210C26C1961900B3088B /* AppDelegate.swift in Sources */,
+				36B700C426D93E2800D943DA /* UsersViewModel.swift in Sources */,
 				36A8210E26C1961900B3088B /* SceneDelegate.swift in Sources */,
 				360ADFA926C7FCFC0045792B /* Users.swift in Sources */,
 			);

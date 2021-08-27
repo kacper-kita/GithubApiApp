@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var viewModel = UsersListViewModel()
+    
     private lazy var mainView: MainView = {
         let mainV = MainView()
         return mainV
@@ -27,14 +29,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        NetworkManager.shared.getUsers { (user) in
-            guard let user = user else {return}
-            print(user[0].login)
-        }
+        fetchUsers()
     }
 
-    func setupView() {
+    private func setupView() {
         view.addSubview(mainView)
         view.addSubview(tableView)
         view.backgroundColor = .white
@@ -42,7 +40,7 @@ class ViewController: UIViewController {
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             mainView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
@@ -56,18 +54,25 @@ class ViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+    private func fetchUsers() {
+        viewModel.getUsers { (_) in
+            self.tableView.reloadData()
+        }
+    }
 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return viewModel.userVM.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as! MainTableView
         
-        cell.titleLabel.text = "dziala"
+        let user = viewModel.userVM[indexPath.row]
+        cell.userVM = user
         
         return cell
     }
