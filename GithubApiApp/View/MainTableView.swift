@@ -25,19 +25,19 @@ final class MainTableView: UITableViewCell {
         }
     }
     
-    var userImageData: Data? {
-        didSet {
-            if let data = userImageData {
-                
-            }
-        }
-    }
+//    var userImageData: Data? {
+//        didSet {
+//            if let data = userImageData {
+//                userImage.image = UIImage(data: data)
+//            }
+//        }
+//    }
+    
     
     lazy var userImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        image.layer.cornerRadius = 15
         return image
         
     }()
@@ -48,6 +48,16 @@ final class MainTableView: UITableViewCell {
         label.numberOfLines = 0
         
         return label
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        
+        return stackView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -61,23 +71,31 @@ final class MainTableView: UITableViewCell {
     }
     
     private func setupView() {
-        addSubview(titleLabel)
-        addSubview(userImage)
-        
+        addSubview(stackView)
+        stackView.addArrangedSubview(userImage)
+        stackView.addArrangedSubview(titleLabel)
+
         setupConstraints()
     }
-    //TODO: Fix problem with images
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            titleLabel.leftAnchor.constraint(equalTo: userImage.rightAnchor, constant: 10),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            userImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            userImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            userImage.heightAnchor.constraint(equalToConstant: 30),
+            userImage.widthAnchor.constraint(equalToConstant: 30)
         ])
         
         NSLayoutConstraint.activate([
-            userImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            userImage.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 50),
-            userImage.heightAnchor.constraint(equalToConstant: 30)
+                stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+                stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+                stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+                stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
 }
