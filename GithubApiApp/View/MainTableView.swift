@@ -92,10 +92,10 @@ final class MainTableView: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-                stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-                stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-                stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
-                stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
 }
