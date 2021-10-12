@@ -12,7 +12,3 @@ struct User: Decodable {
     let avatar_url: String?
     let url: String?
 }
-
-struct Users: Decodable {
-    let all: [User]
-}

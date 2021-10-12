@@ -25,14 +25,6 @@ final class MainTableView: UITableViewCell {
         }
     }
     
-//    var userImageData: Data? {
-//        didSet {
-//            if let data = userImageData {
-//                userImage.image = UIImage(data: data)
-//            }
-//        }
-//    }
-    
     
     lazy var userImage: UIImageView = {
         let image = UIImageView()

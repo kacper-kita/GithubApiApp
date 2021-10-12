@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
         return detailV
     }()
     
-    private var data: UsersViewModel
+    var data: UsersViewModel
     
     init(data: UsersViewModel) {
         self.data = data
@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getDetail()
     }
     
     private func setupView() {
@@ -36,6 +37,15 @@ class DetailViewController: UIViewController {
         detailView.userVM = data
         
         setupConstraints()
+    }
+    
+    private func getDetail() {
+        let detailURL = data.url
+
+        NetworkManager.shared.getDetails(urlString: detailURL) { (data) in
+            detailView.detailVM = data
+        }
+
     }
     
     private func setupConstraints() {

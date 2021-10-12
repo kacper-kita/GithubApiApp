@@ -25,6 +25,76 @@ final class DetailView: UIView {
         }
     }
     
+    var detailVM: DetailsViewModel? {
+        didSet {
+            if let detailVM = detailVM {
+                nameLabel.text = detailVM.name
+                blogLabel.text = detailVM.blog
+                locationLabel.text = detailVM.location
+                reposLabel.text = String(detailVM.public_repos)
+                gistsLabel.text = String(detailVM.public_gists)
+                followersLabel.text = String(detailVM.followers)
+                followingLabel.text = String(detailVM.following)
+            }
+        }
+    }
+    
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var blogLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var locationLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var reposLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var gistsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var followersLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var followingLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
     lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false

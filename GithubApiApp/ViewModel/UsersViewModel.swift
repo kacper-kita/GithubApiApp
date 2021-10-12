@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Metal
 
 struct UsersViewModel {
     let user: User
